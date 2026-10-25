@@ -13,10 +13,12 @@ app.listen(port,()=>{
 })
 
 connectDB()
-app.use("/api/mail",mailRoutes);
-app.use("/api/auth",authRoutes);
-app.use("/api/files",fileRoutes);
+
+app.use("/api/auth", authRoutes);
+app.use("/api/files", fileRoutes);
+app.use("/api/mail", mailRoutes);
 
 app.get('/',(req,res)=>{
 res.send("Cold Mailer API is running...")
 })
+export default app;
